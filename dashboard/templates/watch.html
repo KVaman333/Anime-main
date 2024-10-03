@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load anime_tags %}
+
+{% block main %}
+
+<div class="breadcrumb-option">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <a href="{% url 'homepage' %}">Home</a>
+          <span>/&emsp;</span>
+          <span>{{name}}</span>
+          <span>&emsp;/&emsp;</span>
+          <span>Episode </span>
+          <b>&ensp;<span id="episode">1</span></b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="anime-details spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="container" >
+          <div class="anime__video__player" style="height: 700px">
+            <iframe id="main-frame" src="{{current_ep_link}}" allowfullscreen frameBorder="0" width="100%" height="100%" title="{{name}} | Episode {{current_ep}}"></iframe>
+          </div>
+        </div>
+        <div class="anime__details__episodes">
+          <div class="section-title">
+            <h5>More Episodes</h5>
+          </div>
+          {% for ep in eps %}
+            <a id="{{ ep }}" class="episode-link" href="javascript:void(0);">Ep {{ep}}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock main %}

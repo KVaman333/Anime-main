@@ -1,0 +1,43 @@
+{% extends 'auth_base.html' %}
+{% load static %}
+{% load anime_tags %}
+
+{% block main %}
+    <section class="login spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="login__form">
+              <h3>Login</h3>
+              <form action="." method="POST"> {% csrf_token %}
+                <div class="input__item">
+                  <input name="username" type="text" placeholder="Username">
+                  <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                </div>
+                <div class="input__item">
+                  <input name="password" type="password" placeholder="Password">
+                  <span><i class="fas fa-lock" aria-hidden="true"></i></span>
+                </div>
+                <input type="submit" class="site-btn" value="Login Now"  data-toggle="tooltip" data-placement="bottom" title="Login"/>
+              </form>
+              <a href="" class="forget_pass">Forgot Your Password?</a>
+            </div>
+            <br>
+            <div class="login__form text-center">
+              {% if invalid_details %}
+              <h3 style="font-size: 20px">Invaild Authentication Credentials<br>Please Try Again.</h3>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="login__register">
+              <h3>This WebSite Is Not Available<br> for the time being...</h3>
+              <a href="" class="primary-btn">Registration Not Open</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock main %}

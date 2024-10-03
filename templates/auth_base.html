@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zxx">
+   {% load static %}
+   <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+      <meta name="description" content="Anime">
+      <meta name="keywords" content="Anime">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Anime</title>
+      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+      <link rel="stylesheet" href="{% static 'css/A.bootstrap.min.css+font-awesome.min.css+elegant-icons.css+plyr.css+nice-select.css+owl.carousel.min.css+slicknav.min.css+style.css,Mcc.DT6xbIN1Vz.css.pagespeed.cf.cqaYnfGGcG.css' %} " type="text/css" />
+   </head>
+   <body>
+      <div id="preloder">
+         <div class="loader"></div>
+      </div>
+      <header class="header">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-2">
+                  <div class="header__logo">
+                     <a href="{% url 'homepage' %}">
+                        <img src="data:{% static 'image/png' %};base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAAAXCAMAAABebLP7AAAABGdBTUEAALGPC/xhBQAAAF1QTFRFAAAA////////////////////////////////////////////////////////5TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY3////5TY3fzTtvwAAAB10Uk5TADN3RO4RZqoi3ZlVu4jMZt137kSZM7vMIogRqlVR5bzbAAABnklEQVRIx7WV65KDIAyFU6ReutqK9e7C+z/mEgKItLO7Q8f8EVC+6CEnAvw/LkxHBkmRSSn59bcncv2EZGn04s+9H9BL3Cqrk+g3Q5dfp9CvnOg1nBEMyZghO4NeaXCOKW6HFSgbfbnnXjw8mIdSqgUQnb489PzZ64V+cBvFqKeTiCTldLKlXapR5Iz0opyO/tS71dwqEwsIGijCD3ZdtbOn3+m8sCqbgF5LF3lMdxC1uEGLu+ZO+fkaOAlfOnRUQdiGmfMuAvpAuzdhSZ3o/cuPZi7EhGIFTiqc2Cwo0btOda2MbDt9NqwnwGrw00pHoYT9LMyy6m/r1t1JmSudKqBfcNTYLzvQN7yz2TSw0hHA4u6Y0fehGGzZ7xXCdxfFdFMTRhHzjCIlJhWG8Miamai8o/aUb+mPt/T2lc5kFNlH9FG4QM2Ax/RbMn0i+ePmdIwyld67uj84KWhe3Doqif7t5YZ5G5yT8mM/Q0cl0aloWrLTYh3P498IS6UHnQDdVL78EgqCpNFh3ku+X6mdlPHvW+dLpGvtTV8bhe4DP58sXnJY5tvyAAAAAElFTkSuQmCC" alt="" data-pagespeed-url-hash="4002370176" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                     </a>
+                  </div>
+               </div>
+               <div class="col-lg-8">
+                  <div class="header__nav">
+                     <nav class="header__menu">
+                     </nav>
+                  </div>
+               </div>
+               <div class="col-lg-2">
+                  <div class="header__right">
+                     <a href="" data-toggle="tooltip" data-placement="bottom" title="Watching you.."><i class="fas fa-user-tie" aria-hidden="true"></i></span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+
+
+      {% block main %}
+      {% endblock main %}
+
+
+      <footer class="footer">
+         <div class="page-up">
+            <a href="index.html#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-3">
+                  <div class="footer__logo">
+                     <a href="{% url 'homepage' %}"><img src="data:{% static 'image/png' %} ;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAAAXCAMAAABebLP7AAAABGdBTUEAALGPC/xhBQAAAF1QTFRFAAAA////////////////////////////////////////////////////////5TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY35TY3////5TY3fzTtvwAAAB10Uk5TADN3RO4RZqoi3ZlVu4jMZt137kSZM7vMIogRqlVR5bzbAAABnklEQVRIx7WV65KDIAyFU6ReutqK9e7C+z/mEgKItLO7Q8f8EVC+6CEnAvw/LkxHBkmRSSn59bcncv2EZGn04s+9H9BL3Cqrk+g3Q5dfp9CvnOg1nBEMyZghO4NeaXCOKW6HFSgbfbnnXjw8mIdSqgUQnb489PzZ64V+cBvFqKeTiCTldLKlXapR5Iz0opyO/tS71dwqEwsIGijCD3ZdtbOn3+m8sCqbgF5LF3lMdxC1uEGLu+ZO+fkaOAlfOnRUQdiGmfMuAvpAuzdhSZ3o/cuPZi7EhGIFTiqc2Cwo0btOda2MbDt9NqwnwGrw00pHoYT9LMyy6m/r1t1JmSudKqBfcNTYLzvQN7yz2TSw0hHA4u6Y0fehGGzZ7xXCdxfFdFMTRhHzjCIlJhWG8Miamai8o/aUb+mPt/T2lc5kFNlH9FG4QM2Ax/RbMn0i+ePmdIwyld67uj84KWhe3Doqif7t5YZ5G5yT8mM/Q0cl0aloWrLTYh3P498IS6UHnQDdVL78EgqCpNFh3ku+X6mdlPHvW+dLpGvtTV8bhe4DP58sXnJY5tvyAAAAAElFTkSuQmCC" alt="" data-pagespeed-url-hash="4002370176" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="footer__nav">
+                     <ul>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3">
+                  <p>
+                     Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This WebSite is made with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="{{request.path}}">HackGod</a>
+                  </p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <div class="search-model">
+         <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+               <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+         </div>
+      </div>
+      <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+      <script src="{% static 'js/custom.js' %} "></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'js/player.js' %}"></script>
+      <script src="{% static 'js/jquery.nice-select.min.js+mixitup.min.js.pagespeed.jc.1vd_GiIZPd.js' %}"></script><script>eval(mod_pagespeed_rUN85x4Ch7);</script>
+      <script>eval(mod_pagespeed_T2NBN7JB_Q);</script>
+      <script src="{% static 'js/jquery.slicknav.js+owl.carousel.min.js.pagespeed.jc.tDEomUlLBt.js' %}"></script><script>eval(mod_pagespeed_wLn3zwxwyC);</script>
+      <script>eval(mod_pagespeed_NQDwIZgN$Q);</script>
+      <script src="{% static 'js/main.js' %}"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-23581568-13');
+      </script>
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"688513f8d9b81bc8","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.8.1","si":10}'></script>
+   </body>
+</html>

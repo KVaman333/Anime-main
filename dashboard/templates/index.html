@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load anime_tags %}
+
+{% block main %}
+
+{% comment %}      SLIDE SHOW [START]      {% endcomment %}
+<section class="hero">
+   <div class="container">
+      <div class="hero__slider owl-carousel">
+         <div class="hero__items set-bg" data-setbg="{% static first|canvas_pic %}">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="hero__text">
+                     {% comment %} {% for tagg in first|canvas_tags %}
+                        <div class="label">{{tagg}}</div>
+                     {% endfor %} {% endcomment %}
+                     <h2>{{first|canvas_name}}</h2>
+                     <p>{{first|canvas_description}}</p>
+                     <a href="{{first|canvas_link}}"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="hero__items set-bg" data-setbg="{% static second|canvas_pic %}">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="hero__text">
+                     <h2>{{second|canvas_name}}</h2>
+                     <p>{{second|canvas_description}}</p>
+                     <a href="{{second|canvas_link}}"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="hero__items set-bg" data-setbg="{% static third|canvas_pic %}">
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="hero__text">
+                     <h2>{{third|canvas_name}}</h2>
+                     <p>{{third|canvas_description}}</p>
+                     <a href="{{third|canvas_link}}"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+{% comment %}      SLIDE SHOW [END]      {% endcomment %}
+
+{% comment %}    ANIME PREVIEW [START]   {% endcomment %}
+<section class="product spad">
+   <div class="container">
+      <div class="row">
+         <div class="">
+
+            {% comment %}    TRENDING NOW [START]    {% endcomment %}
+
+            <div class="trending__product">
+               <div class="row">
+                  <div class="col-lg-8 col-md-8 col-sm-8">
+                     <div class="section-title">
+                        <h4>OP ANIME</h4>
+                     </div>
+                  </div>
+                  {% comment %} <div class="col-lg-4 col-md-4 col-sm-4">
+                     <div class="btn__all">
+                        <a href="index.html#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                     </div>
+                  </div> {% endcomment %}
+               </div>
+               <div class="row">
+                  {% for anime in animes %}
+                     <div class="col-lg-2 col-md-6 col-sm-6">
+                        <a href="{{anime|get_link:animes}}"><div class="product__item">
+                           <div class="product__item__pic set-bg" data-setbg="{{anime|get_cover:animes}}">
+                              <div class="ep">{{anime|get_present_ep:animes}} / {{anime|get_total_ep:animes}}</div>
+                              {% comment %} <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                              <div class="view"><i class="fa fa-eye"></i> 9141</div> {% endcomment %}
+                           </div>
+                           <div class="product__item__text">
+                              <ul>
+                                 <li>{{anime|get_lang:animes}}</li>
+                              </ul>
+                              <h5>{{anime|get_name:animes}}</a></h5>
+                           </div>
+                        </div>
+                     </div>
+                  {% endfor %}
+               </div>
+            </div>
+
+            {% comment %}    TRENDING NOW [END]    {% endcomment %}
+
+         </div>
+         {% comment %} <div class="col-lg-4 col-md-6 col-sm-8">
+            <div class="product__sidebar">
+               <div class="product__sidebar__view">
+                  <div class="section-title">
+                     <h5>MC Sort</h5>
+                  </div>
+                  <ul class="filter__controls">
+                     <li class="active" data-filter="*">All</li>
+                     <li data-filter=".week">OP</li>
+                     <li data-filter=".month">ISEKAI</li>
+                     <li data-filter=".years">MAGIC</li>
+                  </ul>
+                  <div class="filter__gallery">
+                     <div class="product__sidebar__view__item set-bg mix all years" data-setbg="img/sidebar/tv-1.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="index.html#">Boruto: Naruto next generations</a></h5>
+                     </div>
+                     <div class="product__sidebar__view__item set-bg mix month week" data-setbg="img/sidebar/tv-2.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="index.html#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                     </div>
+                     <div class="product__sidebar__view__item set-bg mix week years" data-setbg="img/sidebar/tv-3.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="index.html#">Sword art online alicization war of underworld</a></h5>
+                     </div>
+                     <div class="product__sidebar__view__item set-bg mix years month" data-setbg="img/sidebar/tv-4.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="index.html#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                     </div>
+                     <div class="product__sidebar__view__item set-bg mix all" data-setbg="img/sidebar/tv-5.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="index.html#">Fate stay night unlimited blade works</a></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="product__sidebar__comment">
+                  <div class="section-title">
+                     <h5>New Comment</h5>
+                  </div>
+                  <div class="product__sidebar__comment__item">
+                     <div class="product__sidebar__comment__item__pic">
+                        <img src="img/sidebar/xcomment-1.jpg.pagespeed.ic.UtQm2l5HDP.jpg" alt="" data-pagespeed-url-hash="2908173633" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                     </div>
+                     <div class="product__sidebar__comment__item__text">
+                        <ul>
+                           <li>Active</li>
+                           <li>Movie</li>
+                        </ul>
+                        <h5><a href="index.html#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                        <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                     </div>
+                  </div>
+                  <div class="product__sidebar__comment__item">
+                     <div class="product__sidebar__comment__item__pic">
+                        <img src="img/sidebar/xcomment-2.jpg.pagespeed.ic.SOZ7BJOxXy.jpg" alt="" data-pagespeed-url-hash="3202673554" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                     </div>
+                     <div class="product__sidebar__comment__item__text">
+                        <ul>
+                           <li>Active</li>
+                           <li>Movie</li>
+                        </ul>
+                        <h5><a href="index.html#">Shirogane Tamashii hen Kouhan sen</a></h5>
+                        <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                     </div>
+                  </div>
+                  <div class="product__sidebar__comment__item">
+                     <div class="product__sidebar__comment__item__pic">
+                        <img src="img/sidebar/xcomment-3.jpg.pagespeed.ic.N3Mwe8TZjd.jpg" alt="" data-pagespeed-url-hash="3497173475" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                     </div>
+                     <div class="product__sidebar__comment__item__text">
+                        <ul>
+                           <li>Active</li>
+                           <li>Movie</li>
+                        </ul>
+                        <h5><a href="index.html#">Kizumonogatari III: Reiket su-hen</a></h5>
+                        <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                     </div>
+                  </div>
+                  <div class="product__sidebar__comment__item">
+                     <div class="product__sidebar__comment__item__pic">
+                        <img src="img/sidebar/xcomment-4.jpg.pagespeed.ic.c5TIkW6Nnv.jpg" alt="" data-pagespeed-url-hash="3791673396" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                     </div>
+                     <div class="product__sidebar__comment__item__text">
+                        <ul>
+                           <li>Active</li>
+                           <li>Movie</li>
+                        </ul>
+                        <h5><a href="index.html#">Monogatari Series: Second Season</a></h5>
+                        <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div> {% endcomment %}
+      </div>
+   </div>
+</section>
+{% comment %}    ANIME PREVIEW [END]   {% endcomment %}
+
+
+{% endblock main %}
+
+
+
+
+
+
+
+
