@@ -22,8 +22,8 @@ else:
 
 cred = credentials.Certificate(BASE_DIR/"Anime/api.json")
 firebase_admin.initialize_app(cred,{
-    'databaseURL': 'https://anime-streaming-hub-default-rtdb.firebaseio.com/',
-    'storageBucket': "anime-streaming-hub.appspot.com"
+    'databaseURL': 'https://your-url.com/',
+    'storageBucket': "your-bucket"
 })
 
 # Application definition
